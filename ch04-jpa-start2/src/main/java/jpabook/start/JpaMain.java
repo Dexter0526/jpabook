@@ -13,7 +13,6 @@ public class JpaMain {
         //엔티티 매니저 팩토리 생성
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
         EntityManager em = emf.createEntityManager(); //엔티티 매니저 생성
-
         EntityTransaction tx = em.getTransaction(); //트랜잭션 기능 획득
 
         try {
@@ -34,18 +33,19 @@ public class JpaMain {
     }
 
     public static void logic(EntityManager em) {
-
         String id = "id1";
+        // 비영속
         Member member = new Member();
         member.setId(id);
-        member.setUsername("지한");
+        member.setUsername("ㅇㅇ");
         member.setAge(2);
 
         //등록
+        // 영속
         em.persist(member);
 
         //수정
-        member.setAge(20);
+        member.setAge(30);
 
         //한 건 조회
         Member findMember = em.find(Member.class, id);
