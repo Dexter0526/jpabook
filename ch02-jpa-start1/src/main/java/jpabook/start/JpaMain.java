@@ -11,6 +11,7 @@ public class JpaMain {
     public static void main(String[] args) {
 
         //엔티티 매니저 팩토리 생성
+    	//jpabook : <persistence-unit name="jpabook">
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
         EntityManager em = emf.createEntityManager(); //엔티티 매니저 생성
 
