@@ -33,10 +33,10 @@ public class JpaMain {
     }
 
     public static void logic(EntityManager em) {
-//        String id = "id1";
+        String id = "id1";
         // 비영속
         Member member = new Member();
-//        member.setId(id);
+        member.setId(id);
         member.setUsername("ㅇㅇ");
         member.setAge(2);
 
@@ -48,7 +48,7 @@ public class JpaMain {
         member.setAge(30);
 
         //한 건 조회
-        Member findMember = em.find(Member.class, "1");
+        Member findMember = em.find(Member.class, "id1");
         System.out.println("findMember=" + findMember.getUsername() + ", age=" + findMember.getAge());
 
         //목록 조회
