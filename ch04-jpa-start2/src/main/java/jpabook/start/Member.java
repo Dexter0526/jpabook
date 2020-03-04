@@ -13,7 +13,9 @@ import java.util.Date;
         columnNames = {"NAME", "AGE"} )})
 public class Member {
 
-    @Id
+    @Id // 기본키 할당 에노테이션
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment(mysql, h2)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOARD_SEQ_GENERATOR") // sequence(oracle, h2)
     @Column(name = "ID")
     private String id;
 
