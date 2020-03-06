@@ -1,5 +1,10 @@
 package jpabook.model;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+import jpabook.model.entity.Delivery;
+import jpabook.model.entity.Order;
+import jpabook.model.entity.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,7 +20,18 @@ public class Main {
 
         try{
             tx.begin();
-            System.out.println("try");
+
+            Delivery delivery = new Delivery();
+            OrderItem orderItem1 = new OrderItem();
+            OrderItem orderItem2 = new OrderItem();
+
+            Order order = new Order();
+            order.setDelivery(delivery);
+            order.addOrderItem(orderItem1);
+            order.addOrderItem(orderItem2);
+
+            em.persist(order);
+
             tx.commit();
 
         }catch (Exception e){
