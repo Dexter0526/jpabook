@@ -5,12 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by holyeye on 2014. 3. 11..
- */
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity{
 
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")
@@ -25,13 +22,13 @@ public class Order {
 
     @OneToOne
     @JoinColumn(name = "DELIVERY_ID")
-    private Delivery delivery;
+    private Delivery delivery;  //배송정보
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;     //주문시간
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;//주문상태
+
 
     //==연관관계 메서드==//
     public void setMember(Member member) {
@@ -53,10 +50,6 @@ public class Order {
         delivery.setOrder(this);
     }
 
-    public Delivery getDelivery() {
-        return delivery;
-    }
-
     //Getter, Setter
     public Long getId() {
         return id;
@@ -76,6 +69,10 @@ public class Order {
 
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
     }
 
     public Date getOrderDate() {

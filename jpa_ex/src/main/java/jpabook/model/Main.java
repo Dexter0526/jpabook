@@ -8,7 +8,6 @@ import javax.persistence.Persistence;
 public class Main {
 
     public static void main(String[] args) {
-
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa_ex");
         EntityManager em = emf.createEntityManager();
 
@@ -16,7 +15,7 @@ public class Main {
 
         try{
             tx.begin();
-
+            System.out.println("try");
             tx.commit();
 
         }catch (Exception e){
