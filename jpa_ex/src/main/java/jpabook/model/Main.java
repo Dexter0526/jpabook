@@ -21,16 +21,16 @@ public class Main {
         try{
             tx.begin();
 
-            Delivery delivery = new Delivery();
-            OrderItem orderItem1 = new OrderItem();
-            OrderItem orderItem2 = new OrderItem();
-
-            Order order = new Order();
-            order.setDelivery(delivery);
-            order.addOrderItem(orderItem1);
-            order.addOrderItem(orderItem2);
-
-            em.persist(order);
+//            Delivery delivery = new Delivery();
+//            OrderItem orderItem1 = new OrderItem();
+//            OrderItem orderItem2 = new OrderItem();
+//
+//            Order order = new Order();
+//            order.setDelivery(delivery);
+//            order.addOrderItem(orderItem1);
+//            order.addOrderItem(orderItem2);
+//
+//            em.persist(order);
 
             tx.commit();
 
