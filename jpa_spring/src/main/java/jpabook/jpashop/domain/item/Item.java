@@ -35,7 +35,6 @@ public abstract class Item {
         this.stockQuantity = restStock;
     }
 
-    //==Getter Setter==//
     public Long getId() {
         return id;
     }
